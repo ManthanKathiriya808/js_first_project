@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grades</title>
+</head>
+<body>
+    <h1>Grade Calculator</h1>
+    <h3>Enter marks</h3>
+    <label for="" >Science :</label>
+    <input type="number" id="science" placeholder="Enter Marks">
+    <br>
+    <br>
+    <label for="">Maths :</label>
+    <input type="number" id="maths" placeholder="Enter Marks">
+    <br>
+    <br>
+    <label for="">Physics :</label>
+    <input type="number" id="physics" placeholder="Enter Marks">
+    <br>
+    <br>
+    <button id="btn">Calculate</button>
+
+    <h3 id="mark1"></h3>
+    <h3 id="mark2"></h3>
+    <h3 id="mark3"></h3>
+    <h3 id="total"></h3>
+    <h3 id="percentage"></h3>
+    <br>
+    <br>
+    <h1 id="grade"></h1>
+</body>
+
+
+    <script>
+        document.getElementById("btn").onclick = function(){
+            let science = document.getElementById("science").value
+            let maths = document.getElementById("maths").value
+            let physics = document.getElementById("physics").value
+            science = Number(science)
+            maths = Number(maths)
+            physics = Number(physics)
+
+            console.log(typeof science)
+            let total =  (science + maths + physics)
+            let percentage = (total) /3
+            document.getElementById("mark1").innerHTML = " science marks are : " + science 
+            document.getElementById("mark2").innerHTML = " maths marks are : " +  maths 
+            document.getElementById("mark3").innerHTML = " physics marks are : " + physics 
+            document.getElementById("total").innerHTML = " Total  marks obtained : " + total 
+            document.getElementById("percentage").innerHTML = " percentage : " + percentage + "%"
+            
+            if(percentage >80 ){
+                document.getElementById("grade").innerHTML = "You got A grade!!!"
+            }
+            else if(percentage >65 ){
+                document.getElementById("grade").innerHTML = "You got B grade"
+            }
+            else if(percentage >45 ){
+                document.getElementById("grade").innerHTML = "You got C grade"
+            }
+            else if(percentage >35 ){
+                document.getElementById("grade").innerHTML = "You got D grade"
+            }
+            else if(percentage <35 ){
+                document.getElementById("grade").innerHTML = "Better Luck Next Time"
+            }
+
+
+        }
+    </script>
+</html>

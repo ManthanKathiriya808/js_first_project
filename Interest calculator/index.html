@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Interest Calculator</h1>
+    <br>
+    <br>
+    <label for="">Total Amount</label>
+    <input type="text" id="p">
+    <br>
+    <br>
+    <label for="">Rate of Interest </label>
+    <input type="text" id="r">
+    <br>
+    <br>
+    <label for="">Time Duration</label>
+    <input type="text" id="t">
+    <br>
+    <br>
+    <button id="btn">Calculate</button>
+    <h2 id="total"></h2>
+</body>
+
+
+<script>
+    document.getElementById("btn").onclick = function(){
+        let p = document.getElementById("p").value
+        let r = document.getElementById("r").value
+        let t = document.getElementById("t").value
+
+        let total = (p * r* t)/100
+
+        document.getElementById("total").innerHTML = "The simple interest of Rs" + p + " " + "at the rate at " + r + "% for " + t +  " unit of time is " +"'" +total + "'." 
+        
+    }
+</script>
+</html>
